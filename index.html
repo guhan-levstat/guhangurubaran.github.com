@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <title> The fish tank </title> 
+  </head>
+  <body>
+    <canvas id="mycanvas"></canvas> 
+  </body>
+ 
+  <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+  <script>
+  var programCode = function(processingInstance) {
+    with (processingInstance) {
+      size(400, 400); 
+      frameRate(30);
+        
+      
+      background(89, 216, 255);
+
+var drawFish = function(centerX, centerY, bodyColor, bodyLength, bodyHeight) {
+
+
+noStroke();
+fill(bodyColor);
+ellipse(centerX, centerY, bodyLength, bodyHeight);
+var tailWidth = bodyLength/4;
+var tailHeight = bodyHeight/2;
+triangle(centerX-bodyLength/2, centerY,
+         centerX-bodyLength/2-tailWidth, centerY-tailHeight,
+         centerX-bodyLength/2-tailWidth, centerY+tailHeight);
+fill(33, 33, 33);
+ellipse(centerX+bodyLength/4, centerY, bodyHeight/5, bodyHeight/5);
+         
+         
+};
+drawFish(104, 100, color(162, 0, 255), 118, 74);
+drawFish(276, 139, color(255, 0, 0), 118, 56);
+drawFish(308, 69, color(146, 144, 153), 79, 56);
+drawFish(323, 271, color(242, 255, 0), 94, 94);
+drawFish(125, 235, color(0, 255, 72), 50, 28);
+drawFish(57, 205, color(0, 255, 72), 50, 28);
+drawFish(184, 264, color(0, 255, 72), 50, 28);
+drawFish(96, 290, color(0, 255, 72), 50, 28);
+drawFish(209, 209, color(0, 255, 72), 50, 28);
+drawFish(171, 346, color(61, 128, 49), 190, 47);
+fill(0, 255, 123);
+rect(0, 380, 400, 20);
+
+var rocks = function(posX, posY ) {
+    fill(138, 3, 3);
+    ellipse(posX, posY, 5, 5);
+};
+rocks(21, 389);
+rocks(5, 391);
+rocks(14, 397);
+rocks(33, 393);
+rocks(43, 397);
+rocks(49, 389);
+rocks(53, 396);
+rocks(65, 391);
+rocks(72, 388);
+rocks(79, 395);
+rocks(93, 391);
+rocks(100, 396);
+rocks(103, 388);
+rocks(113, 396);
+rocks(116, 388);
+rocks(122, 392);
+rocks(138, 391);
+rocks(131, 388);
+rocks(147, 388);
+rocks(159, 394);
+rocks(168, 386);
+rocks(167, 396);
+rocks(178, 388);
+rocks(189, 397);
+rocks(199, 388);
+rocks(191, 384);
+rocks(206, 395);
+rocks(212, 383);
+rocks(219, 388);
+rocks(226, 392);
+rocks(234, 388);
+rocks(244, 395);
+rocks(245, 385);
+rocks(256, 394);
+rocks(253, 388);
+rocks(393, 393);
+rocks(383, 388);
+rocks(372, 396);
+rocks(370, 388);
+rocks(276, 395);
+rocks(297, 389);
+rocks(316, 392);
+rocks(339, 386);
+rocks(264, 384);
+rocks(281, 385);
+rocks(307, 388);
+rocks(354, 392);
+rocks(331, 395);
+rocks(290, 392);
+rocks(325, 388);
+
+
+  var canvas = document.getElementById("mycanvas"); 
+
+  var processingInstance = new Processing(canvas, programCode); 
+  </script>
+</html>
